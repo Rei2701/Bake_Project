@@ -1,0 +1,369 @@
+/*-------NOTE---------
+Khai báo (margin,padding) = 0 để reset khai báo mặc định ban đầu.
+Box-sizing: border-box thuộc tính này giúp tránh tình trạng rớt xuống hàng  
+*/
+/* GLOBAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    color: #212529;
+    background-color: white;
+    letter-spacing: 1px;
+}
+html{
+    font-size: 16px;
+}
+button{
+    background-color:#ff0e83;
+    border: solid white;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 13px 32px;
+    font-size: 0.875rem;
+    transition: all 3s;
+}
+button:hover{
+    background-color: white;
+    color: #ff0e83;
+}
+
+/* HEADER */
+header{
+    background-color: #4e2a84;
+    padding: 2rem 0;
+    position: fixed; /*để chỉnh cho vị trí hiển thị cố định theo thằng cha (body) */
+    width: 100%; 
+    z-index: 100; /*để chỉnh độ ưu tiên đè lên các thẻ khác. z-index nào lớn hơn thì đè lên thằng còn lại */
+}
+.header__content{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.menubar ul{
+    list-style: none;
+}
+.menubar ul li{
+    display: inline;
+    margin: 0 1rem;
+}
+.menubar ul a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: all 1s; /*transition là thuộc tính giúp tinh chỉnh thời gian thay đổi các thuộc tính css*/
+}
+.menubar ul a:hover{
+    color: #ff0e83;
+}
+.logo {
+    color: white;
+    font-size: 2rem;
+}
+
+/* CAROUSEL */
+.carousel{
+    background-image: url(../img/b3.jpg);
+    /* width: 100%; tại sao k cần khai báo witdh nhỉ ? */
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+
+/* chỉnh vị trí cho cụm thẻ content carousel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel h2{
+    font-size: 56px;
+}
+.carousel p{
+    font-size: 17.6px;
+    padding: 23px 0;
+}
+.carousel button{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ff0e83;
+    color: white;
+    padding: 13px 32px;
+    border: solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 800;
+    transition: all .5s;
+}
+.carousel button:hover{
+    background-color: white;
+    color: #ff0e83;
+    font-weight: 800;
+}
+
+/* INTRODUCTION*/
+/* Ve Grid: luon luon khai bao so cot. Neu co gom hang thi moi can khai bao so hang */
+.introduction{
+    display: grid;
+    /* grid-template-columns: repeat(4,25%); */
+    /* fr : phân số */
+    /* mỗi column 1/4 */
+    grid-template-columns: repeat(4,1fr);
+}   
+
+.intro__ab1{
+    /* số line của item
+    số line kết thúc 
+    số cột mà item chiếm  */
+    /* grid-column:2 / 4; */
+    grid-column: 2 /span 2;
+}
+.intro__bake{
+    grid-column: 1 /span 2;
+}
+.intro__ab4{
+    grid-column: 3 /span 2;
+}
+.intro__item img{
+    width: 100%;
+    display: block;
+}
+.intro__item{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.intro__item h3{
+    font-size: 2rem;
+    padding-bottom: 30px;
+}
+.intro__item p{
+    font-size: 0.875rem;
+    color: #c1c1c1;
+    line-height: 29px;
+    padding: 0 32px;
+}
+.intro__item:first-child{
+    background-color: #4e2a84;
+    padding: 0 32px;
+    color: white;
+}
+.intro__item:nth-child(3){
+    background-color: #ff0e83;
+    color: white;
+}
+.intro__item:nth-child(4){
+    background-color: #ed6498;
+    color: white;
+}
+.intro__item:nth-child(6){
+    background-color:#836eaa;
+    color: white;
+}
+.intro__item:nth-child(8){
+    background-color:#4e2a84;
+    color: white;
+}
+/* ABOUT US */
+.aboutus{
+    padding: 70px 0;
+}
+.aboutus__content{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-around;
+    text-align: center;
+}
+.aboutus__item p:first-child{
+    font-size: 2rem;
+    color: #4e2a84;
+    font-weight: 600;
+}
+.aboutus__item p:last-of-type{
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    padding: 24px 0;
+}
+/* p:first-child : thẻ con đầu tiên và là thẻ p
+p:first-of-type : thẻ p con đầu tiên */
+/* SERVICES */
+.services{
+    background-image: url(../img/s1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.services h2{
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: white;
+    padding: 70px 0;
+}
+.services__content{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;  
+    justify-content: center;
+    height: 350px;
+    /* position: relative; */
+}
+.services__item i{
+    font-size: 4rem;
+    color:#4e2a84;
+    background-color: white;
+    padding: 20px;
+    border-radius: 50%;
+    border: 1px solid #4e2a84; /*set value cho border : độ dày của viền nét gì màu*/
+    transition: all 0.3s;
+}
+.services__item i:hover{
+    color: #ff0e83;
+    border: 1px solid #ff0e83;
+}
+.services__item h3{
+    font-size: 25px;
+    font-weight: 300;
+    padding: 20px;
+}
+.services__item button{
+    border: 2px solid white;
+    margin: 20px 0;
+    /* position: absolute;
+    bottom: 10px; */
+    transition: all 0.3s;
+}
+.services__item button:hover{
+    background-color: white;
+    color: #ff0e83;
+}
+/* GALLERRY */
+.gallery__content{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    /* margin: 0 20px; */
+    padding: 0 20px;
+}
+/* chia cột - dàn layout với grid */
+.gallery__g1{
+    grid-column: 1/ 3;
+    /* grid-column: 1/ span 2; */
+}
+.gallerry__g6{
+    grid-column: 3/5;
+    /* grid-column: 3/span 2; */
+}
+.gallery__item img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.gallery h2{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+/* chỉnh overplay(phủ lên) cho các item */
+.gallery__item{
+    position: relative;
+    overflow: hidden;
+}
+.gallery__overplay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.356);
+    padding: 38px 28px;
+    text-align: right;
+    color: white;
+}
+.gallery__overplay h3 span{
+    font-weight: 300;
+}
+.gallery__overplay h3{
+    font-size: 1.87rem;
+    transform: translateY(30px);
+    transition: all 0.5s;
+}
+.gallery__item:hover .gallery__overplay h3{
+    transform: translateY(0);
+}
+/* .gallery__overplay h3::before{
+    content: "The";
+}
+.gallery__overplay h3::after{
+    content: "!";
+} */
+/* chỉnh chuyển động của thanh bên dưới item */
+.gallery__overplay h3::after{
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    display: block;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.gallery__item:hover .gallery__overplay h3::after{
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all .5s;
+}
+/* CHỈNH DÒNG P HIỂN THỊ KHI RÊ CHUỘT VÀO THẰNG CHA  */
+.gallery__overplay p{
+    position: absolute;
+    bottom:38px;
+    right: 28px;
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: all .5s;
+}
+.gallery__item:hover .gallery__overplay p{
+    opacity: 1;
+}
+
+/* TEAM  */
+.team h2{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: 2px;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.team{
+    background-color: #4e2a84;
+    margin-top: 60px;
+}
+.team__container{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.tean__card img{
+    width: auto;
+    height: auto;
+    object-fit:cover;
+}
+
